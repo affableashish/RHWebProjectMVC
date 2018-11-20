@@ -1,0 +1,24 @@
+﻿@model List<RHWebProjectMVC.Person>
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+ }
+
+<h2>List</h2>
+<table class="table table-striped">
+    <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Date Of Birth</td>
+        <td>Email Address</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>                
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>                
+            <td>@item.DateOfBirth.ToShortDateString()</td>              
+            <td>@item.EmailAddress</td>
+        </tr>
+    }
+</table>
